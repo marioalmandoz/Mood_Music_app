@@ -155,3 +155,61 @@ body
     background: red;
     color: #fff;
   }
+
+
+
+
+
+
+
+
+
+  .playlist {
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 20px;
+    padding-left: 10px;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Style for the playlist title */
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Style for the list of songs */
+  .songs {
+    list-style: none;
+    padding: 0;
+  }
+  
+  /* Style for each song item */
+  .song {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    border-radius: 5px;
+  }
+  
+  /* Style for the song cover image */
+  .song img {
+    width: 60px; /* Adjust the size as needed */
+    height: 60px; /* Adjust the size as needed */
+    border-radius: 5px;
+    margin-right: 10px;
+  }
+  
+  /* Style for the song information */
+  .song-info h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+  }
+  .song-info h4 {
+    margin: 0;
+    font-size: 12px;
+    font-weight: 100;
+    color: rgb(211, 210, 210);
+  }
