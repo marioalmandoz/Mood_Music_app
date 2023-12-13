@@ -158,12 +158,6 @@ body
 
 
 
-
-
-
-
-
-
   .playlist {
     width: 100%;
     margin: 0 auto;
@@ -178,19 +172,35 @@ body
     margin-bottom: 20px;
   }
   
-  /* Style for the list of songs */
-  .songs {
-    list-style: none;
-    padding: 0;
-  }
-  
-  /* Style for each song item */
-  .song {
-    display: flex;
-    align-items: center;
-    padding: 5px;
-    border-radius: 5px;
-  }
+    /* Style for the list of songs */
+    .songs {
+      list-style: none;
+      padding: 0;
+      display: flex; /* Add flex display */
+      flex-wrap: wrap;
+    }
+    
+    /* Style for each song item */
+/* Style for each song item */
+.song {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  border-radius: 5px;
+  width: 100%; /* Set each song item to take up the full width */
+  margin-bottom: 10px; /* Add margin between each item */
+
+}
+
+/* Style for the anchor tag within each song item */
+.song a {
+  display: flex; /* Set the <a> tag as a flex container */
+  width: 100%; /* Make the link take full width */
+  text-decoration: none; /* Remove default underline */
+  color: inherit; /* Inherit text color */
+}
+
+/* Other styles remain the same */
 
   .menu-song {
     margin-left: auto; /* Pushes the icon to the right */
