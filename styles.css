@@ -191,6 +191,13 @@ body
     padding: 5px;
     border-radius: 5px;
   }
+
+  .menu-song {
+    margin-left: auto; /* Pushes the icon to the right */
+    margin-right: 20px;
+    color: white;
+    font-size: 20px;
+  }
   
   /* Style for the song cover image */
   .song img {
@@ -212,4 +219,37 @@ body
     font-size: 12px;
     font-weight: 100;
     color: rgb(211, 210, 210);
+  }
+
+
+
+
+
+
+
+
+  .mList-header
+  {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 30px;
+  }
+
+  .custom-button {
+    background-color: #F6BD60;
+    color: black;
+    padding: 14px 30px;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-right: 10px;
+    border-radius: 35px;
+  }
+  
+  .custom-button:last-child {
+    margin-right: 0; /* Removes right margin from the last button */
   }
