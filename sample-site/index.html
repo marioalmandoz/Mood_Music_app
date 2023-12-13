@@ -5,13 +5,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Sample site (to be PWA)</title>
-    <meta name="author" content="Maikel Putman" />
+    <meta name="author" content="Mario and Nigel" />
     <meta
       name="description"
       content="Sample site as a resource to build your first PWA"
     />
     <meta name="keywords" content="pwa, workshop, fontys, smart mobile" />
-    <link rel="stylesheet" href="css/stylesheet.css" type="text/css" />
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <link rel="stylesheet" href="styles.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
   </head>
 
   <body>
@@ -22,39 +28,60 @@
     </div>
 
     <!-- Nuevo div para 2 columnas por 3 filas -->
-    <div class="grid-container">
-      <div class="grid-item">
-        <img src="images/descarga.jpg" alt="imagen 1" />
-        <p>Hip-Hop</p>
+    <div class="gallery-container">
+      <div class="gallery">
+        <a target="_blank" href="mList.html">
+          <img src="images/descarga.jpg" alt="Cinque Terre" />
+        </a>
+        <div class="desc">Hip-Hop</div>
       </div>
-      <div class="grid-item">
-        <img src="images/Atmosphere.png" alt="Imagen 2" />
-        <p>Atmosphere</p>
+
+      <div class="gallery">
+        <a target="_blank" href="mList.html">
+          <img src="images/Atmosphere.png" alt="Forest" />
+        </a>
+        <div class="desc">Atmosphere</div>
       </div>
-      <div class="grid-item">
-        <img src="images/relax.jpg" alt="Imagen 3" />
-        <p>Relax</p>
+
+      <div class="gallery">
+        <a target="_blank" href="mList.html">
+          <img src="images/relax.jpg" alt="Northern Lights" />
+        </a>
+        <div class="desc">Relax</div>
       </div>
-      <div class="grid-item">
-        <img src="images/Reggaeton.jpg" alt="Imagen 4" />
-        <p>Reggaeton</p>
+
+      <div class="gallery">
+        <a target="_blank" href="mList.html">
+          <img src="images/Reggaeton.jpg" alt="Mountains" />
+        </a>
+        <div class="desc">Reggaeton</div>
       </div>
-      <div class="grid-item">
-        <img src="images/Trap.jpg" alt="Imagen 5" />
-        <p>Trap</p>
+      <div class="gallery">
+        <a target="_blank" href="mList.html">
+          <img src="images/Trap.jpg" alt="Mountains" />
+        </a>
+        <div class="desc">Trap</div>
       </div>
-      <div class="grid-item">
-        <img src="images/Rock.jpg" alt="Imagen 6" />
-        <p>Rock</p>
+      <div class="gallery">
+        <a target="_blank" href="mList.html">
+          <img src="images/Rock.jpg" alt="Mountains" />
+        </a>
+        <div class="desc">Rock</div>
       </div>
     </div>
 
     <!--Esto es la barra de menu de abajo-->
     <div class="bottom-menu">
-      <div class="menu-icon" onclick="reloadPage()">Icono 1</div>
-      <div class="menu-icon">Icono 2</div>
+      <div class="menu-icon" onclick="reloadPage()">
+        <i class="fas fa-home"></i><span>Home</span>
+      </div>
       <div class="menu-icon">
-        <a href="webcam.html">Icono 3</a>
+        <a href="mList.html"><i class="fas fa-music"></i></a
+        ><span>Playlist</span>
+      </div>
+      <div class="menu-icon">
+        <a href="webcam.html"><i class="fas fa-smile"></i></a>
+        <span><a href="webcam.html"></a>Mood</span>
       </div>
     </div>
 
