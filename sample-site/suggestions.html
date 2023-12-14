@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="style.css" type="text/css" />
+
     <script
       src="https://kit.fontawesome.com/f055db3f14.js"
       crossorigin="anonymous"
@@ -13,62 +14,65 @@
   </head>
   <body>
     <div>
-      <h1 id="webcam-title">Suggested songs</h1>
+      <h1 id="webcam-title">Suggested songs to be happy</h1>
     </div>
-    <div class=""></div>
+    <div class="up-icon">
+      <div class="icon-container"><i class="fas fa-random"></i></div>
+      <div class="icon-container"><i class="fas fa-play"></i></div>
+    </div>
+
     <div class="playlist">
       <ul class="songs">
         <li class="song">
-          <img src="rap.jpg" alt="Song 1 Cover" />
+          <img src="images/Happy.jpg" alt="Song 1 Cover" />
           <div class="song-info">
-            <h3>Ultra Lightbeam</h3>
-            <h4>Kanye West</h4>
+            <h3 id="song-title1">Happy</h3>
+            <h4 id="artist-name1">Pharrell Williams</h4>
           </div>
           <div class="menu-song">
             <i class="fa-solid fa-ellipsis-vertical"></i>
           </div>
         </li>
         <li class="song">
-          <img src="rap.jpg" alt="Song 1 Cover" />
+          <img src="images/DontWarry.jpg" alt="Song 1 Cover" />
           <div class="song-info">
-            <h3>Ultra Lightbeam</h3>
-            <h4>Kayne West</h4>
+            <h3 id="song-title2">Don't Worry, Be Happy</h3>
+            <h4 id="artist-name2">Bobby McFerrin</h4>
           </div>
           <div class="menu-song">
             <i class="fa-solid fa-ellipsis-vertical"></i>
           </div>
         </li>
         <li class="song">
-          <img src="rap.jpg" alt="Song 1 Cover" />
+          <img id="im1" src="images/Upton.jpg" alt="Song 1 Cover" />
           <div class="song-info">
-            <h3>Ultra Lightbeam</h3>
-            <h4>Kayne West</h4>
+            <h3 id="song-title3">Uptown Funk</h3>
+            <h4 id="artist-name3">Mark Ronson ft. Bruno Mars</h4>
           </div>
           <div class="menu-song">
             <i class="fa-solid fa-ellipsis-vertical"></i>
           </div>
         </li>
         <li class="song">
-          <img src="rap.jpg" alt="Song 1 Cover" />
+          <img src="images/walking.jpg" alt="Song 1 Cover" />
           <div class="song-info">
-            <h3>Ultra Lightbeam</h3>
-            <h4>Kayne West</h4>
+            <h3 id="song-title4">Walking on Sunshine</h3>
+            <h4 id="artist-name4">Katrina and the Waves</h4>
           </div>
           <div class="menu-song">
             <i class="fa-solid fa-ellipsis-vertical"></i>
           </div>
         </li>
         <li class="song">
-          <img src="rap.jpg" alt="Song 1 Cover" />
+          <img src="images/CantStop.jpg" alt="Song 1 Cover" />
           <div class="song-info">
-            <h3>Ultra Lightbeam</h3>
-            <h4>Kayne West</h4>
+            <h3 id="song-title5">Can't Stop the Feeling!</h3>
+            <h4 id="artist-name5">Justin Timberlake</h4>
           </div>
           <div class="menu-song">
             <i class="fa-solid fa-ellipsis-vertical"></i>
           </div>
         </li>
-        <!-- Add more songs as needed -->
       </ul>
     </div>
 
@@ -86,5 +90,6 @@
         <span>Mood</span>
       </div>
     </div>
+    <script src="./js/Button_manager.js"></script>
   </body>
 </html>

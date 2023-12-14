@@ -8,6 +8,7 @@ body {
   height: 100vh;
   margin: 0;
   background-color: #52796f;
+  margin-bottom: 1px;
 }
 
 #webcam-container {
@@ -41,6 +42,7 @@ body {
 #inputVideo {
   width: 100%;
   max-width: 800px; /* Ajusta el ancho máximo según sea necesario */
+  border-radius: 50%;
 }
 
 #overlay {
@@ -91,6 +93,10 @@ body {
 .custom-button:hover,
 .custom-button:active {
   background-color: #ffa07a; /* Cambia el color al ser pulsado o al pasar el ratón sobre el botón */
+}
+
+.custom-button.clicked {
+  background-color: #ffa07a; /* Color para cuando el botón está clicado */
 }
 
 .mood-list div:nth-child(2) {
@@ -169,4 +175,17 @@ main {
 
 .menu-icon span {
   color: white; /* Establece el color del texto en blanco */
+}
+
+.up-icon {
+  position: fixed;
+  right: 0;
+  display: flex;
+  align-items: center;
+  color: white;
+  padding: 10px; /* Ajusta el espacio según sea necesario */
+}
+
+.icon-container {
+  margin-left: 10px; /* Ajusta el espacio entre los iconos según sea necesario */
 }
