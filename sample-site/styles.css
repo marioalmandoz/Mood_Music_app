@@ -24,9 +24,10 @@ body {
 
 .gallery img {
   width: 100%;
-  height: 200px;
+  height: 75%;
   display: block;
-  border-radius: 13%;
+  object-fit: cover;
+  border-radius: 20px;
 }
 
 .desc {
@@ -156,15 +157,30 @@ h1 {
 .songs {
   list-style: none;
   padding: 0;
+  display: flex; /* Add flex display */
+  flex-wrap: wrap;
 }
 
+/* Style for each song item */
 /* Style for each song item */
 .song {
   display: flex;
   align-items: center;
   padding: 5px;
   border-radius: 5px;
+  width: 100%; /* Set each song item to take up the full width */
+  margin-bottom: 10px; /* Add margin between each item */
 }
+
+/* Style for the anchor tag within each song item */
+.song a {
+  display: flex; /* Set the <a> tag as a flex container */
+  width: 100%; /* Make the link take full width */
+  text-decoration: none; /* Remove default underline */
+  color: inherit; /* Inherit text color */
+}
+
+/* Other styles remain the same */
 
 .menu-song {
   margin-left: auto; /* Pushes the icon to the right */

@@ -43,6 +43,7 @@ body {
   width: 100%;
   max-width: 800px; /* Ajusta el ancho máximo según sea necesario */
   border-radius: 50%;
+  align-items: center;
 }
 
 #overlay {
@@ -128,30 +129,6 @@ main {
 .menu-icon {
   /* Agrega estilos para los íconos, por ejemplo: */
   font-size: 1.5rem;
-  cursor: pointer;
-}
-/*Codigo para el buscador y la lupa*/
-#search-container {
-  display: flex;
-  align-items: center;
-  margin-top: 20px;
-  margin: 0 auto; /* Centra el contenedor */
-  max-width: 50%; /* Limita el ancho al 50% de la pantalla */
-}
-
-#search-bar {
-  flex: 1;
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 5px 0 0 5px;
-}
-
-#search-icon {
-  background-color: #456ebf;
-  color: #fff;
-  padding: 8px;
-  border: 1px solid #456ebf;
-  border-radius: 0 5px 5px 0;
   cursor: pointer;
 }
 
