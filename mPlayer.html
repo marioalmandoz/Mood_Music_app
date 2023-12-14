@@ -5,45 +5,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <script src="https://kit.fontawesome.com/f055db3f14.js" crossorigin="anonymous"></script>
-</body>
-    <title>Document</title>
 </head>
 <body>
     <div class="music-container">
         <div class="music-player">
-          <nav>
-            <div class="circle">
-              <a href="mList.html">
-              <i class="fa-solid fa-angle-left"></i>
-            </a>
+            <nav>
+                <div class="circle">
+                    <a href="mList.html">
+                        <i class="fa-solid fa-angle-left"></i>
+                    </a>
+                    
+                </div>
+                <div class="circle">
+                  <a href="mList.html">
+                      <i class="fa-solid fa-angle-right"></i>
+                  </a>
+                  
+              </div>
+            </nav>
+            <!-- Wrapper div for elements to move down -->
+            <div class="move-down">
+                <img src="rap.jpg" class="song-image">
+                <h1>Ultra Lightbeam</h1>
+                <p>Kayen West Ft. Kirk Something</p>
+        
+                <audio id="song">
+                    <source src="Ultralight Beam.mp3" type="audio/mpeg">
+                </audio>
+                <input type="range" value="0" id="progress">
+        
+                <div class="controls">
+                    <div><i class="fa-solid fa-backward"></i></div>
+                    <div onclick="playPause()"><i class="fa-solid fa-play" id="ctrlIcon"></i></div>
+                    <div><i class="fa-solid fa-forward"></i></div>
+                </div>
             </div>
-
-          </nav>
-          <!-- Wrapper div for elements to move down -->
-          <div class="move-down">
-            <img src="rap.jpg" class="song-image">
-            <h1>Ultra Lightbeam</h1>
-            <p>Kayen West Ft. Kirk Something</p>
-      
-            <audio id="song">
-              <source src="Ultralight Beam.mp3" type="audio/mpeg">
-            </audio>
-            <input type="range" value="0" id="progress">
-      
-            <div class="controls">
-              <div><i class="fa-solid fa-backward"></i></div>
-              <div onclick="playPause()"><i class="fa-solid fa-play" id="ctrlIcon"></i></div>
-              <div><i class="fa-solid fa-forward"></i></div>
-            </div>
-          </div>
-          <!-- End of move-down div -->
+            <!-- End of move-down div -->
         </div>
-      </div>
+    </div>
       
     <script>
-        let progress = document.getElementById("progress")
-        let song = document.getElementById("song")
-        let ctrlIcon = document.getElementById("ctrlIcon")
+const username = 'JDmAKCIIbCsksW3stcA4hpcdt9OQPYkkn0Idaeck'; // Replace with your generated username
+    const bridgeIP = '192.168.178.201'; // Replace with your Hue Bridge's IP address
+        const lightId = '1'; // Replace with your light's ID
+
+        let progress = document.getElementById("progress");
+        let song = document.getElementById("song");
+        let ctrlIcon = document.getElementById("ctrlIcon");
+        let lightSyncInterval = null; // To store the interval for light synchronization
 
         song.onloadedmetadata = function(){
             progress.max = song.duration;
@@ -53,31 +62,61 @@
         function playPause(){
             if(ctrlIcon.classList.contains("fa-pause")){
                 song.pause();
-                ctrlIcon.classList.remove("fa-pause")
-                ctrlIcon.classList.add("fa-play")
+                ctrlIcon.classList.remove("fa-pause");
+                ctrlIcon.classList.add("fa-play");
+
+                clearInterval(lightSyncInterval); // Stop light synchronization
+                lightSyncInterval = null; // Reset the interval variable
             }
             else{
                 song.play();
-                ctrlIcon.classList.add("fa-pause")
-                ctrlIcon.classList.remove("fa-play")
+                ctrlIcon.classList.add("fa-pause");
+                ctrlIcon.classList.remove("fa-play");
+
+                if (!lightSyncInterval) {
+                    startMusicSync(); // Start syncing lights with music
+                }
             }
-
         }
 
-        if(song.play()){
-            setInterval(()=>{
-                progress.value = song.currentTime;
-            },500);
+        function startMusicSync() {
+            const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+            const source = audioContext.createMediaElementSource(song);
+            const analyser = audioContext.createAnalyser();
+            analyser.fftSize = 256;
+            source.connect(analyser);
+            analyser.connect(audioContext.destination);
+
+            const hueAPI = `http://${bridgeIP}/api/${username}/lights/${lightId}/state`;
+
+            const dataArray = new Uint8Array(analyser.frequencyBinCount);
+            lightSyncInterval = setInterval(() => {
+                analyser.getByteFrequencyData(dataArray);
+
+                const average = dataArray.reduce((acc, val) => acc + val) / dataArray.length;
+                const hueValue = (average / 255) * 65535;
+
+                const state = {
+                    hue: Math.floor(hueValue),
+                    transitiontime: 1 // Transition time in multiples of 100ms
+                };
+
+                fetch(hueAPI, {
+                    method: 'PUT',
+                    body: JSON.stringify(state)
+                })
+                .catch(error => {
+                    console.error('Error changing light color:', error);
+                });
+            }, 100); // Adjust interval as needed
         }
 
-progress.onchange = function(){
-    song.play();
-    song.currentTime = progress.value;
-    ctrlIcon.classList.remove("fa-pause")
-    ctrlIcon.classList.add("fa-play")
-}
-
+        progress.onchange = function(){
+            song.play();
+            song.currentTime = progress.value;
+            ctrlIcon.classList.remove("fa-pause");
+            ctrlIcon.classList.add("fa-play");
+        };
     </script>
 </body>
-    
 </html>
