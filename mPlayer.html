@@ -95,9 +95,11 @@ const username = 'JDmAKCIIbCsksW3stcA4hpcdt9OQPYkkn0Idaeck'; // Replace with you
 
                 const average = dataArray.reduce((acc, val) => acc + val) / dataArray.length;
                 const hueValue = (average / 255) * 65535;
+                const brightness = (average / 255) * 100; // Adjust brightness
 
                 const state = {
                     hue: Math.floor(hueValue),
+                    bri: Math.floor(brightness),
                     transitiontime: 1 // Transition time in multiples of 100ms
                 };
 
