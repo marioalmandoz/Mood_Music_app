@@ -6,11 +6,12 @@ self.addEventListener("install", (event) => {
     caches.open(cacheName).then((cache) => {
       console.log("Service Worker: Caching important offline files");
       return cache.addAll([
-        "/error404.html", // Cambia por la ruta correcta de tu página de error 404
-        "../images/404.svg",
-        "/index.html",
-        "../css/stylesheet.css",
-        "../images/yes.gif",
+        "./error404.html", // Cambia por la ruta correcta de tu página de error 404
+        "./images/404.svg",
+        "./mList.html",
+        "./index.html",
+        "./css/stylesheet.css",
+        "./images/yes.gif",
       ]);
     })
   );

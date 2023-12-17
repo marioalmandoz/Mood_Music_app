@@ -13,10 +13,10 @@ body {
 
 #webcam-container {
   display: inline-block;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 #inputVideo {
-  padding: 50px;
+  padding: 5px;
 }
 
 #webcam-title {
@@ -27,29 +27,30 @@ body {
 #webcam-text {
   text-align: center;
   color: rgb(0, 0, 0);
-  font-size: 25px; /* Ajusta el tamaño del texto según tus preferencias */
+  font-size: 20px; /* Ajusta el tamaño del texto según tus preferencias */
   background-color: #e9ffc4; /* Fondo del texto con opacidad */
   padding: 20px; /* Añade espacio alrededor del texto */
 }
 #webcam-text2 {
   text-align: center;
   z-index: 2;
-  color: rgb(0, 0, 0);
-  font-size: 30px; /* Ajusta el tamaño del texto según tus preferencias */
+  color: white;
+  font-size: 25px; /* Ajusta el tamaño del texto según tus preferencias */
   padding: 20px; /* Añade espacio alrededor del texto */
 }
 
 #inputVideo {
-  width: 100%;
-  max-width: 800px; /* Ajusta el ancho máximo según sea necesario */
-  border-radius: 50%;
+  display: flex;
+  max-height: 300px;
+  width: 100%; /* Ajusta el ancho máximo según sea necesario */
   align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 #overlay {
   position: absolute;
   top: 0;
-  left: 0;
   z-index: 1;
 }
 
@@ -63,14 +64,7 @@ body {
   width: 80%;
   margin: 0 auto; /* Centra el contenedor */
 }
-.confirm-button button {
-  background-color: #f6bd60;
-  color: black;
-  padding: 14px 30px;
-  border: none;
-  border-radius: 35px;
-  font-size: 30px;
-}
+
 .confirm-button {
   text-align: center;
   text-decoration: none;
@@ -88,7 +82,8 @@ body {
   text-decoration: none;
   display: inline-block;
   border-radius: 35px;
-  font-size: 30px;
+
+  font-size: 15px;
   transition: background-color 0.3s;
 }
 .custom-button:hover,
@@ -119,8 +114,10 @@ main {
   left: 0;
   width: 100%;
   display: flex;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
   justify-content: space-evenly;
   background-color: #52796f;
+
   color: #fff;
   padding: 10px 0;
   margin-top: 10px;
@@ -128,7 +125,7 @@ main {
 
 .menu-icon {
   /* Agrega estilos para los íconos, por ejemplo: */
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   cursor: pointer;
 }
 
@@ -165,4 +162,19 @@ main {
 
 .icon-container {
   margin-left: 10px; /* Ajusta el espacio entre los iconos según sea necesario */
+}
+
+.confirm-button button{
+  background-color: rgb(217, 112, 112);
+  color: white;
+  padding: 14px 30px;
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 35px;
+  margin-left: 10px;
+  margin-right: 10px;
+  font-size: 15px;
+  transition: background-color 0.3s;
 }
