@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="./public/js/face-api.min.js"></script>
+
+    <link rel="stylesheet" href="style.css" type="text/css"> 
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+</head>
+
+<body>
+    <div id="webcam-container">
+        <h1 id="webcam-title">Let´s see how you feel!</h1>
+        <video onloadedmetadata="onPlay(this)" id="inputVideo" autoplay muted playsinline></video>
+        <canvas id="overlay">
+    </div>
+    <div id="webcam-text">It seems you feel Happy that´s great</div>
+    <div id="webcam-text2">How do you want to feel?</div>
+
+    
+    <div class="mood-list">
+        <button class="custom-button" onclick="handleButtonClick(this)">Happy</button>
+        <button class="custom-button" onclick="handleButtonClick(this)">Relaxed</button>
+        <button class="custom-button" onclick="handleButtonClick(this)">Reflective</button>
+        <button class="custom-button" onclick="handleButtonClick(this)">Motivated</button>
+        <button class="custom-button" onclick="handleButtonClick(this)">In love</button>
+        <button class="custom-button" onclick="handleButtonClick(this)">Euphoric</button>
+    </div>
+    <div class="confirm-button">
+        <a href="suggestions.html">
+            <button id="confirmButton1">Confirm</button>
+        </a>
+    </div>
+
+    <div class="bottom-menu">
+        <div class="menu-icon" onclick="reloadPage()">
+            <a href="index.html"><i class="fas fa-home"></i></a>
+            <span>Home</span></div>
+            <div class="menu-icon">
+                <a href="mList.html"><i class="fas fa-music"></i></a
+                ><span>Playlist</span>
+              </div>
+        <div class="menu-icon">
+          <a href="webcam.html"><i class="fas fa-smile"></i></a>
+          <span>Mood</span>
+        </div>
+      </div>
+    <script src="./public/js/script_webcam.js"></script>
+    <script src="./js/Button_manager.js"></script>
+
+</body>
+</html>

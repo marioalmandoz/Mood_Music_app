@@ -1,0 +1,180 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+  margin: 0;
+  background-color: #52796f;
+  margin-bottom: 1px;
+}
+
+#webcam-container {
+  display: inline-block;
+  margin-top: 10px;
+}
+#inputVideo {
+  padding: 5px;
+}
+
+#webcam-title {
+  color: white;
+  text-align: center;
+}
+
+#webcam-text {
+  text-align: center;
+  color: rgb(0, 0, 0);
+  font-size: 20px; /* Ajusta el tamaño del texto según tus preferencias */
+  background-color: #e9ffc4; /* Fondo del texto con opacidad */
+  padding: 20px; /* Añade espacio alrededor del texto */
+}
+#webcam-text2 {
+  text-align: center;
+  z-index: 2;
+  color: white;
+  font-size: 25px; /* Ajusta el tamaño del texto según tus preferencias */
+  padding: 20px; /* Añade espacio alrededor del texto */
+}
+
+#inputVideo {
+  display: flex;
+  max-height: 300px;
+  width: 100%; /* Ajusta el ancho máximo según sea necesario */
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+#overlay {
+  position: absolute;
+  top: 0;
+  z-index: 1;
+}
+
+.mood-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px; /* Espaciado entre los botones */
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 80%;
+  margin: 0 auto; /* Centra el contenedor */
+}
+
+.confirm-button {
+  text-align: center;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  padding-top: 10px;
+}
+
+.custom-button {
+  background-color: #f6bd60;
+  color: black;
+  padding: 14px 30px;
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 35px;
+
+  font-size: 15px;
+  transition: background-color 0.3s;
+}
+.custom-button:hover,
+.custom-button:active {
+  background-color: #ffa07a; /* Cambia el color al ser pulsado o al pasar el ratón sobre el botón */
+}
+
+.custom-button.clicked {
+  background-color: #ffa07a; /* Color para cuando el botón está clicado */
+}
+
+.mood-list div:nth-child(2) {
+  color: red;
+  background: red;
+}
+
+.custom-button:last-child {
+  margin-right: 0; /* Removes right margin from the last button */
+}
+main {
+  margin-bottom: 10px;
+}
+
+/*Codigo para la barra de menu*/
+.bottom-menu {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+  justify-content: space-evenly;
+  background-color: #52796f;
+
+  color: #fff;
+  padding: 10px 0;
+  margin-top: 10px;
+}
+
+.menu-icon {
+  /* Agrega estilos para los íconos, por ejemplo: */
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+
+/* Estilo común para las imágenes */
+
+.menu-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white; /* Agrega esta línea para establecer el color del icono */
+}
+
+.menu-icon a {
+  color: white; /* Establece el color del icono en blanco */
+  text-decoration: none; /* Opcional: elimina el subrayado del enlace */
+  transition: color 0.3s; /* Agrega una transición para suavizar el cambio de color */
+}
+.menu-icon a:hover {
+  color: gray; /* Cambia el color a gris cuando el ratón pasa por encima */
+}
+
+.menu-icon span {
+  color: white; /* Establece el color del texto en blanco */
+}
+
+.up-icon {
+  position: fixed;
+  right: 0;
+  display: flex;
+  align-items: center;
+  color: white;
+  padding: 10px; /* Ajusta el espacio según sea necesario */
+}
+
+.icon-container {
+  margin-left: 10px; /* Ajusta el espacio entre los iconos según sea necesario */
+}
+
+.confirm-button button{
+  background-color: rgb(217, 112, 112);
+  color: white;
+  padding: 14px 30px;
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 35px;
+  margin-left: 10px;
+  margin-right: 10px;
+  font-size: 15px;
+  transition: background-color 0.3s;
+}
